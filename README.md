@@ -54,16 +54,16 @@ repository, run logs, local configuration, or heartbeat.
 
 ## Publication approval gates
 
-**Publication has not been approved.** The workflow file is preparation, not permission to
-publish. Do not push this work, change GitHub settings or secrets, or run a deployment
-without separate human approval. Local export and tests do not publish anything.
+The workflow file does not grant permission to publish. Repo pushes and issue work need
+human approval; publication needs separate approval before settings, secrets, or deployment
+are changed. Local export and tests do not publish anything.
 
-After human approval of the code, a human can approve its push and merge to `main`.
+After approval of repo work, an authorized operator can push and merge the code to `main`.
 Merging does not publish: `.github/workflows/preview-pages.yml` has only
 `workflow_dispatch`, no push trigger, and deploys only from `main`.
 
 Before publication, a human must separately approve the public exposure of the sample
-data and, for a marked preview, the marker. An authorized human must configure GitHub Pages
+data and, for a marked preview, the marker. An authorized operator must configure GitHub Pages
 to use GitHub Actions, review the `github-pages` environment protection rules, and set the
 repository secret named `LANE_MARKER` through a secure channel if a marked preview is
 approved. Do not put its value in source, command arguments, issues, or logs.
