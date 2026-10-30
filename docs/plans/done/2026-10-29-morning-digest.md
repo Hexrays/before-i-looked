@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-29
 ---
 
 # Morning digest
@@ -77,3 +78,30 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Completion
+
+Review is complete. The reviewer was confirmed to have seen the page, and issue #7 is
+closed. A human separately approved replacement of the public preview with a clean copy.
+
+The clean replacement succeeded in [workflow run 40988262319](https://github.com/Hexrays/before-i-looked/actions/runs/40988262319).
+The same public URL, https://hexrays.github.io/before-i-looked/, was verified: the banner
+reads "no marker set" and the lane marker is absent. The workflow has no retained artifacts.
+
+The ignored local copy at `var/preview/index.html` was regenerated with
+`env -u LANE_MARKER pnpm export:preview`. Its banner reads "no marker set"; comparison with
+the local configuration confirmed that the lane marker is absent. No preview or local
+configuration is included in this archive.
+
+## Issues
+
+| # | Issue | Blocked by |
+|---|-------|------------|
+| [#1](https://github.com/Hexrays/before-i-looked/issues/1) | Digest types | — |
+| [#2](https://github.com/Hexrays/before-i-looked/issues/2) | Run log reader | #1 |
+| [#3](https://github.com/Hexrays/before-i-looked/issues/3) | Digest page | #1, #2 |
+| [#4](https://github.com/Hexrays/before-i-looked/issues/4) | Digest JSON | #1, #2, #3 |
+| [#5](https://github.com/Hexrays/before-i-looked/issues/5) | Board links | #1, #2, #3 |
+| [#6](https://github.com/Hexrays/before-i-looked/issues/6) | Route tests | #1, #3, #4 |
+| [#7](https://github.com/Hexrays/before-i-looked/issues/7) | Review preview | #2, #3, #4, #5, #6 |
+| [#8](https://github.com/Hexrays/before-i-looked/issues/8) | Remove marker and archive plan | #7 |
